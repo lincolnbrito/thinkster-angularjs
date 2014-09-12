@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Binding</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="">
+	<div ng-controller="FirstCtrl">
+		<h1>{{data.message + " world"}}</h1>
+		<br>
+		<div class="{{data.message}}">
+			Wrap me with a Bootstrap class
+		</div>
+	</div>
+</div>
+<script src="../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
