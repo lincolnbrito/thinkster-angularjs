@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binding</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="">
+	
+	<input type="text" ng-model="data.message">
+	<h1>{{data.message}}</h1>
+
+	<div ng-controller="FirstCtrl">
+		<input type="text" ng-model="data.message">
+		<h1>{{data.message}}</h1>
+	</div>
+
+	<div ng-controller="SecondCtrl">
+		<input type="text" ng-model="data.message">
+		<h1>{{data.message}}</h1>
+	</div>
+</div>
+<script src="../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
