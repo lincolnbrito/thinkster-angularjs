@@ -1,0 +1,1 @@
+AngularJS course from thinkster.io [thinkster.io](https://thinkster.io/angulartutorial/a-better-way-to-learn-angularjs/)
