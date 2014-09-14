@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app>
+
+	<div ng-controller="DeathrayMenuController">
+		<button ng-click="toggleMenu()">Toggle menu</button>
+		<ul ng-show="menuState.show">
+			<li ng-click="stun()">Stun</li>
+			<li ng-click="disintegrate()">Disitegrate</li>
+			<li ng-click="erase()">Erase from history</li>
+		</ul>
+	</div>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	function DeathrayMenuController($scope) {
+		$scope.menuState = {show:false};
+
+		$scope.toggleMenu = function(){
+			$scope.menuState.show = !$scope.menuState.show;
+		}
+	}
+</script>
+</body>
+</html>
