@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+		.selected{
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+<div ng-app>
+
+	<table border="1" ng-controller='RestaurantTableController'>
+		<tr ng-repeat='restaurant in directory' ng-click='selectRestaurant($index)' ng-class='{selected:$index==selectedRow}'>
+			<td>{{restaurant.name}}</td>
+			<td>{{restaurant.cuisine}}</td>
+		</tr>
+	</table>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	function RestaurantTableController($scope) {
+		$scope.directory =[
+			{name:'The Handsome Heifer', cuisine:'BBQ'},
+			{name:'Greens Green Greens', cuisine:'Salads'},
+			{name:'House of Fine Fish', cuisine:'Seafood'}
+		];
+
+		$scope.selectRestaurant = function(row){
+			$scope.selectedRow = row;
+		}
+	}
+</script>
+</body>
+</html>
