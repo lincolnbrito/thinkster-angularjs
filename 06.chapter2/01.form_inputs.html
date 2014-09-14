@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binding</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app>
+
+	<form ng-controller="StartUpController">
+		Starting: <input ng-model="funding.startingEstimate">
+		Recommendation: {{funding.needed}}
+	</form>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	function StartUpController($scope) {
+		$scope.funding = { startingEstimate: 0 };
+		computeNeeded = function() {
+			$scope.funding.needed = $scope.funding.startingEstimate * 10;
+		};
+		$scope.$watch('funding.startingEstimate', computeNeeded);
+	}
+</script>
+</body>
+</html>
