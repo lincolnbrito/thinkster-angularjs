@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binding</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app>
+
+	<table ng-controller="AlbumController">
+		<tr ng-repeat="track in album">
+			<td>{{$index + 1}}</td>
+			<td>{{track.name}}</td>
+			<td>{{track.duration}}</td>
+		</tr>
+	</table>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	var album = [
+		{name: 'Mary Contrary', duration: '2:34'},
+		{name: 'Jack Sprat', duration: '3:21'},
+		{name: 'Jill Hill', duration: '17:45'},
+	];
+	function AlbumController($scope) {
+		$scope.album = album;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binding</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app>
+
+	<form ng-submit="requestFunding()" ng-controller="StartUpController">
+		Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+		Recommendation: {{needed}}
+		<input type="submit" value="Fund my startup!">
+		<input type="button" value="Reset" ng-click="reset()">
+	</form>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	function StartUpController($scope) {
+		$scope.computeNeeded = function() {
+			$scope.needed = $scope.startingEstimate * 10;
+		};
+
+		$scope.requestFunding = function(){
+			window.alert("Sorry, please get more customers first.")
+		}
+
+		$scope.reset = function(){
+			$scope.startingEstimate = 0;
+		}
+	}
+</script>
+</body>
+</html>

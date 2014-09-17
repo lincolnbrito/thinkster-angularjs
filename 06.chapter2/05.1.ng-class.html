@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+		.error{
+			background-color: red;
+		}
+		.warning{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<div ng-app>
+
+	<div ng-controller="HeaderController">
+		<div ng-class='{error: isError, warning:isWarning}'>{{messageText}}</div>
+		<button ng-click='showError()'>Simulate Error</button>
+		<button ng-click='showWarning()'>Simulate Warning</button>
+	</div>
+
+</div>
+<script src="../angular.min.js"></script>
+<script>
+	function HeaderController($scope) {
+		$scope.isError = false;
+		$scope.isWarning = false;
+
+		$scope.showError = function(){
+			$scope.messageText = 'This is an error!';
+			$scope.isError = true;
+			$scope.isWarning = false;
+		}
+
+		$scope.showWarning = function(){
+			$scope.messageText = 'Just a warning. Please carry on.';
+			$scope.isWarning = true;
+			$scope.isError = false;
+		}
+	}
+</script>
+</body>
+</html>
