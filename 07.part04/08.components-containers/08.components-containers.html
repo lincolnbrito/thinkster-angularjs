@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 04 - Transclusion</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="app">
+	
+	<clock timezone="MST"></clock>
+	
+	<br>
+	<br>
+	<br>
+
+	<panel title="I'm a title">
+		<clock timezone="PST"></clock>
+	</panel>
+	
+	<br>
+	<br>
+	<br>
+
+	<panel title="Eu sou um outro container">
+		<clock timezone="GMT"></clock>
+		<clock timezone="XYZ"></clock>
+		<clock timezone="ABC"></clock>
+		<clock timezone="XPTO"></clock>
+	</panel>
+	
+</div>
+<script src="../../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
