@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+	<title>Chapter 6 - Directives</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+		.expander{
+			border: 1px solid black;
+			width: 250px;
+		}
+		.expander > .title{
+			background-color: black;
+			color: white;
+			padding: .1em .3em;
+			cursor: pointer;
+		}
+		.expander > .body{
+			padding: .1em .3em;
+		}
+	</style>
+</head>
+<body>
+
+<div ng-controller="SomeController">
+	<accordion>
+		<expander class="expander" ng-repeat='expander in expanders' expander-title="expander.title">
+			{{expander.text}}
+		</expander>
+	</accordion>
+</div>
+		
+
+<script src="../../../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
