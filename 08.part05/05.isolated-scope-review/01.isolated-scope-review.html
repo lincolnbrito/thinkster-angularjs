@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 05 - Isolated Scope &</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="phoneApp">
+	<div ng-controller="AppCtrl">
+		<phone number="55-1234" network="network" make-call="leaveVoicemail(number, message)"></phone>
+		<phone number="71-98765432" par="teste" network="network" make-call="leaveVoicemail(number, message)"></phone>
+	</div>
+</div>
+<script src="../../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
