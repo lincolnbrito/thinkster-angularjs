@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 06 - Organization</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+
+<div ng-app="app" ng-controller="RoomCtrl as room">
+	<div class="btn btn-default" ng-click="room.openDoor()">
+		{{room.buttonTitle}}
+
+		<div ng-controller="OhterCtrl as other">
+			{{room.foo}}
+		</div>
+	</div>
+</div>
+
+<script src="../../angular-1.1.5.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
