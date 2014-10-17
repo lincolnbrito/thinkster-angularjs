@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 07</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+<div ng-app="app">
+	
+	<div class="btn btn-primary btn-block" ng-repeat="item in 'somewords'.split('')" ng-click="ev = $event">
+		{{$index + 1}}.{{item}}
+		({{ev.pageX}},{{ev.pageY}})
+	</div>
+
+
+</div>
+<script src="../../angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
